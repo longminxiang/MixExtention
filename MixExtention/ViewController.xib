@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="T8F-7d-CfY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCh-WT-pz2">
+                    <rect key="frame" x="71" y="109" width="30" height="30"/>
+                    <state key="normal" title="Pop"/>
+                    <connections>
+                        <action selector="pop" destination="-1" eventType="touchUpInside" id="Y74-nR-Rmg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9r8-HS-fbD">
+                    <rect key="frame" x="121" y="109" width="83" height="30"/>
+                    <state key="normal" title="Pop To Root"/>
+                    <connections>
+                        <action selector="popToRoot" destination="-1" eventType="touchUpInside" id="h9Y-0Y-AmY"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test UINavigationController Extention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-iD-1ah">
+                    <rect key="frame" x="16" y="80" width="286" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-36-zw1">
+                    <rect key="frame" x="16" y="109" width="35" height="30"/>
+                    <state key="normal" title="Push"/>
+                    <connections>
+                        <action selector="push" destination="-1" eventType="touchUpInside" id="TRn-ci-oop"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="k1o-iD-1ah" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="79d-Y4-RlB"/>
+                <constraint firstItem="BCh-WT-pz2" firstAttribute="leading" secondItem="cgf-36-zw1" secondAttribute="trailing" constant="20" id="7XU-tX-pHX"/>
+                <constraint firstItem="9r8-HS-fbD" firstAttribute="leading" secondItem="BCh-WT-pz2" secondAttribute="trailing" constant="20" id="GfW-oJ-NoV"/>
+                <constraint firstItem="k1o-iD-1ah" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="MoA-2j-1V7"/>
+                <constraint firstItem="BCh-WT-pz2" firstAttribute="centerY" secondItem="cgf-36-zw1" secondAttribute="centerY" id="OGy-sL-Tp0"/>
+                <constraint firstItem="cgf-36-zw1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="pf6-a5-JHA"/>
+                <constraint firstItem="cgf-36-zw1" firstAttribute="top" secondItem="k1o-iD-1ah" secondAttribute="bottom" constant="8" id="uG3-Fv-DFe"/>
+                <constraint firstItem="9r8-HS-fbD" firstAttribute="centerY" secondItem="BCh-WT-pz2" secondAttribute="centerY" id="wIJ-X2-ipa"/>
+            </constraints>
+            <point key="canvasLocation" x="-49" y="6"/>
+        </view>
+    </objects>
+</document>
