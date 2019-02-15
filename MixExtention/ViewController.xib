@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
+                <outlet property="disableInteractivePopGestureButton" destination="bPi-yC-n8v" id="3NP-L7-vEo"/>
+                <outlet property="statusBarHiddenButton" destination="EJ3-I6-gUA" id="8Kl-IK-3Nw"/>
                 <outlet property="view" destination="iN0-l3-epB" id="T8F-7d-CfY"/>
             </connections>
         </placeholder>
@@ -39,6 +41,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test UIViewController Extention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiZ-VD-862">
+                    <rect key="frame" x="16" y="159" width="242" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-36-zw1">
                     <rect key="frame" x="16" y="109" width="35" height="30"/>
                     <state key="normal" title="Push"/>
@@ -46,17 +54,120 @@
                         <action selector="push" destination="-1" eventType="touchUpInside" id="TRn-ci-oop"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-yC-n8v">
+                    <rect key="frame" x="16" y="188" width="202" height="30"/>
+                    <state key="normal" title="disableInteractivePopGesture"/>
+                    <connections>
+                        <action selector="disableInteractivePopGesture" destination="-1" eventType="touchUpInside" id="0RK-SC-FBN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJ3-I6-gUA">
+                    <rect key="frame" x="16" y="226" width="115" height="30"/>
+                    <state key="normal" title="statusBarHidden"/>
+                    <connections>
+                        <action selector="handleStatusBarHiddenButton" destination="-1" eventType="touchUpInside" id="BmU-xI-cMV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-5f-VPG">
+                    <rect key="frame" x="16" y="309" width="143" height="30"/>
+                    <state key="normal" title="navigationBarHidden"/>
+                    <connections>
+                        <action selector="handleNavigationBarHidden" destination="-1" eventType="touchUpInside" id="nTh-qX-acg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g88-60-ENO">
+                    <rect key="frame" x="16" y="347" width="156" height="30"/>
+                    <state key="normal" title="navigationBarTintColor"/>
+                    <connections>
+                        <action selector="handleNavigationBarTintColor" destination="-1" eventType="touchUpInside" id="UZr-Ii-Rqs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uky-Dw-jWe">
+                    <rect key="frame" x="16" y="385" width="179" height="30"/>
+                    <state key="normal" title="navigationBarBarTintColor"/>
+                    <connections>
+                        <action selector="handleNavigationBarBarTintColor" destination="-1" eventType="touchUpInside" id="ezY-ce-JVd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydg-9P-Wbg">
+                    <rect key="frame" x="16" y="423" width="160" height="30"/>
+                    <state key="normal" title="navigationBarTitleColor"/>
+                    <connections>
+                        <action selector="handleNavigationBarTitleColor" destination="-1" eventType="touchUpInside" id="7Dm-X8-6fm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCQ-z0-eBT">
+                    <rect key="frame" x="16" y="461" width="108" height="30"/>
+                    <state key="normal" title="tabBarTintColor"/>
+                    <connections>
+                        <action selector="handleTabBarTintColor" destination="-1" eventType="touchUpInside" id="0Xl-Nu-KtP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2y-wy-3Nn">
+                    <rect key="frame" x="16" y="499" width="131" height="30"/>
+                    <state key="normal" title="tabBarBarTintColor"/>
+                    <connections>
+                        <action selector="handleTabBarBarTintColor" destination="-1" eventType="touchUpInside" id="v8e-Jf-9er"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-qX-0wk">
+                    <rect key="frame" x="148" y="264.5" width="187" height="29"/>
+                    <segments>
+                        <segment title="Default"/>
+                        <segment title="LightContent"/>
+                    </segments>
+                    <connections>
+                        <action selector="handleStatusBarStyleSegmentedControl:" destination="-1" eventType="valueChanged" id="rlS-VO-S9z"/>
+                    </connections>
+                </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="statusBarStyle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXq-NI-yz4">
+                    <rect key="frame" x="16" y="268" width="112" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4D-tb-klK">
+                    <rect key="frame" x="16" y="537" width="164" height="30"/>
+                    <state key="normal" title="Find Top ViewController"/>
+                    <connections>
+                        <action selector="handleFindTopViewController" destination="-1" eventType="touchUpInside" id="aCF-J8-lxx"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="c4D-tb-klK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="0fz-eM-Jcz"/>
+                <constraint firstItem="uky-Dw-jWe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="4ea-ln-fqN"/>
+                <constraint firstItem="CGr-5f-VPG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="5d1-Yb-U3d"/>
                 <constraint firstItem="k1o-iD-1ah" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="79d-Y4-RlB"/>
                 <constraint firstItem="BCh-WT-pz2" firstAttribute="leading" secondItem="cgf-36-zw1" secondAttribute="trailing" constant="20" id="7XU-tX-pHX"/>
+                <constraint firstItem="Ydg-9P-Wbg" firstAttribute="top" secondItem="uky-Dw-jWe" secondAttribute="bottom" constant="8" id="7ec-7F-MNh"/>
+                <constraint firstItem="bPi-yC-n8v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="8Rj-Uc-PSs"/>
+                <constraint firstItem="wXq-NI-yz4" firstAttribute="top" secondItem="EJ3-I6-gUA" secondAttribute="bottom" constant="12" id="Aq4-Fv-LjM"/>
+                <constraint firstItem="JH8-qX-0wk" firstAttribute="centerY" secondItem="wXq-NI-yz4" secondAttribute="centerY" id="Cm0-IT-fAk"/>
                 <constraint firstItem="9r8-HS-fbD" firstAttribute="leading" secondItem="BCh-WT-pz2" secondAttribute="trailing" constant="20" id="GfW-oJ-NoV"/>
+                <constraint firstItem="g88-60-ENO" firstAttribute="top" secondItem="CGr-5f-VPG" secondAttribute="bottom" constant="8" id="GpO-Qj-pVr"/>
+                <constraint firstItem="uky-Dw-jWe" firstAttribute="top" secondItem="g88-60-ENO" secondAttribute="bottom" constant="8" id="IdS-sr-Vbm"/>
                 <constraint firstItem="k1o-iD-1ah" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="MoA-2j-1V7"/>
+                <constraint firstItem="bPi-yC-n8v" firstAttribute="top" secondItem="XiZ-VD-862" secondAttribute="bottom" constant="8" id="NV6-ol-R9v"/>
+                <constraint firstItem="c4D-tb-klK" firstAttribute="top" secondItem="H2y-wy-3Nn" secondAttribute="bottom" constant="8" id="OBg-an-Aov"/>
                 <constraint firstItem="BCh-WT-pz2" firstAttribute="centerY" secondItem="cgf-36-zw1" secondAttribute="centerY" id="OGy-sL-Tp0"/>
+                <constraint firstItem="g88-60-ENO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="T5n-TV-0RP"/>
+                <constraint firstItem="wXq-NI-yz4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="T6j-A9-94v"/>
+                <constraint firstItem="XiZ-VD-862" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="VN9-c3-uo5"/>
+                <constraint firstItem="EJ3-I6-gUA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="VU9-QX-LvX"/>
+                <constraint firstItem="EJ3-I6-gUA" firstAttribute="top" secondItem="bPi-yC-n8v" secondAttribute="bottom" constant="8" id="XdO-Ax-G3W"/>
+                <constraint firstItem="XiZ-VD-862" firstAttribute="top" secondItem="BCh-WT-pz2" secondAttribute="bottom" constant="20" id="ZDM-Fb-lW1"/>
+                <constraint firstItem="LCQ-z0-eBT" firstAttribute="top" secondItem="Ydg-9P-Wbg" secondAttribute="bottom" constant="8" id="ciD-et-B8q"/>
+                <constraint firstItem="Ydg-9P-Wbg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="hhJ-XS-S50"/>
+                <constraint firstItem="JH8-qX-0wk" firstAttribute="leading" secondItem="wXq-NI-yz4" secondAttribute="trailing" constant="20" id="oQk-MK-5j4"/>
                 <constraint firstItem="cgf-36-zw1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="pf6-a5-JHA"/>
+                <constraint firstItem="H2y-wy-3Nn" firstAttribute="top" secondItem="LCQ-z0-eBT" secondAttribute="bottom" constant="8" id="rW9-Gp-Bs9"/>
                 <constraint firstItem="cgf-36-zw1" firstAttribute="top" secondItem="k1o-iD-1ah" secondAttribute="bottom" constant="8" id="uG3-Fv-DFe"/>
+                <constraint firstItem="H2y-wy-3Nn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="vFy-Gd-HU3"/>
                 <constraint firstItem="9r8-HS-fbD" firstAttribute="centerY" secondItem="BCh-WT-pz2" secondAttribute="centerY" id="wIJ-X2-ipa"/>
+                <constraint firstItem="LCQ-z0-eBT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="y81-JG-vmR"/>
+                <constraint firstItem="CGr-5f-VPG" firstAttribute="top" secondItem="wXq-NI-yz4" secondAttribute="bottom" constant="20" id="yRx-Un-h7w"/>
             </constraints>
             <point key="canvasLocation" x="-49" y="6"/>
         </view>

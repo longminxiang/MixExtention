@@ -8,6 +8,7 @@
 
 #import "UINavigationController+MixExtention.h"
 #import <objc/runtime.h>
+#import "MixExtentionHooker.h"
 
 @interface UINavigationControllerMixExtention ()
 
@@ -71,6 +72,14 @@
 
 @implementation UINavigationController (MixExtention)
 
++ (void)load
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(childViewControllerForStatusBarStyle), @selector(_mix_extention_childViewControllerForStatusBarStyle));
+    });
+}
+
 - (UINavigationControllerMixExtention *)mix_extention
 {
     id obj = objc_getAssociatedObject(self, _cmd);
@@ -79,6 +88,13 @@
         objc_setAssociatedObject(self, _cmd, obj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return obj;
+}
+
+- (UIViewController *)_mix_extention_childViewControllerForStatusBarStyle
+{
+    UIViewController *vc = [self _mix_extention_childViewControllerForStatusBarStyle];
+    if (!vc) vc = [self topViewController];
+    return vc;
 }
 
 @end

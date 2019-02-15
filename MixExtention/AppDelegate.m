@@ -19,8 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    self.window.rootViewController = navigationController;
+    UITabBarController *tabBarController = [UITabBarController new];
+    tabBarController.viewControllers = @[[[UINavigationController alloc] initWithRootViewController:[ViewController new]],
+                                         [[UINavigationController alloc] initWithRootViewController:[ViewController new]],
+                                         [[UINavigationController alloc] initWithRootViewController:[ViewController new]],
+                                         [[UINavigationController alloc] initWithRootViewController:[ViewController new]]
+                                         ];
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
