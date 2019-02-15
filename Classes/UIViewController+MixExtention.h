@@ -10,16 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol UIViewControllerMixExtention <NSObject>
-
-@end
-
-@interface UIViewControllerMixExtention : NSObject
-
-@property (nonatomic, readonly) BOOL viewWillAppear;
-
-@property (nonatomic, readonly) BOOL viewDidAppear;
-
+@interface UIViewControllerMixExtentionAttributes : NSObject
 
 @property (nonatomic, assign) BOOL disableInteractivePopGesture;
 
@@ -45,6 +36,20 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) UIColor *tabBarTintColor;
 
 @property (nonatomic, copy) UIColor *tabBarBarTintColor;
+
+@end
+
+@protocol UIViewControllerMixExtention <NSObject>
+
+@end
+
+@interface UIViewControllerMixExtention : NSObject
+
+@property (nonatomic, strong) UIViewControllerMixExtentionAttributes *attributes;
+
+@property (nonatomic, readonly) BOOL viewWillAppear;
+
+@property (nonatomic, readonly) BOOL viewDidAppear;
 
 + (UIViewController *)topViewController;
 

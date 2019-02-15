@@ -9,6 +9,7 @@
 #ifndef MixExtention_h
 #define MixExtention_h
 
+#import "MixExtentionHooker.h"
 #import "UIViewController+MixExtention.h"
 #import "UINavigationController+MixExtention.h"
 
