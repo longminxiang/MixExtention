@@ -28,8 +28,8 @@
 
     self.mix_extention.attributes = [UIViewControllerMixExtentionAttributes new];
 
-    [self.mix_extention.attributes addObserver:self forKeyPath:@"disableInteractivePopGesture" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
-    [self.mix_extention.attributes addObserver:self forKeyPath:@"statusBarHidden" options:NSKeyValueObservingOptionNew context:nil];
+    [self.mix_extention.attributes addObserver:self forKeyPath:MixExtAttributeDisableInteractivePopGesture options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
+    [self.mix_extention.attributes addObserver:self forKeyPath:MixExtAttributeStatusBarHidden options:NSKeyValueObservingOptionNew context:nil];
     self.mix_extention.attributes.navigationBarTintColor = [self randColor];
     self.mix_extention.attributes.navigationBarBackImage = [UIImage imageNamed:rand() % 2 ? @"icon_back" : @"nav_back"];
 }
@@ -127,12 +127,12 @@
         }
     }
     else if (object == self.mix_extention.attributes) {
-        if ([keyPath isEqualToString:@"disableInteractivePopGesture"]) {
+        if ([keyPath isEqualToString:MixExtAttributeDisableInteractivePopGesture]) {
             NSString *title = [NSString stringWithFormat:@"disableInteractivePopGesture: %@", self.mix_extention.attributes.disableInteractivePopGesture ? @"YES" : @"NO"];
             self.disableInteractivePopGestureButton.titleLabel.text = title;
             [self.disableInteractivePopGestureButton setTitle:title forState:UIControlStateNormal];
         }
-        else if ([keyPath isEqualToString:@"statusBarHidden"]) {
+        else if ([keyPath isEqualToString:MixExtAttributeStatusBarHidden]) {
             NSString *title = [NSString stringWithFormat:@"statusBarHidden: %@", self.mix_extention.attributes.statusBarHidden ? @"YES" : @"NO"];
             self.statusBarHiddenButton.titleLabel.text = title;
             [self.statusBarHiddenButton setTitle:title forState:UIControlStateNormal];
@@ -149,8 +149,8 @@
 {
     [self.mix_extention removeObserver:self forKeyPath:@"viewWillAppear"];
     [self.mix_extention removeObserver:self forKeyPath:@"viewDidAppear"];
-    [self.mix_extention.attributes removeObserver:self forKeyPath:@"disableInteractivePopGesture"];
-    [self.mix_extention.attributes removeObserver:self forKeyPath:@"statusBarHidden"];
+    [self.mix_extention.attributes removeObserver:self forKeyPath:MixExtAttributeDisableInteractivePopGesture];
+    [self.mix_extention.attributes removeObserver:self forKeyPath:MixExtAttributeStatusBarHidden];
 }
 
 @end
