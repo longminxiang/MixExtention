@@ -10,21 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSString* MixExtViewControllerAttribute NS_EXTENSIBLE_STRING_ENUM;
+@protocol UIViewControllerMixExtention <NSObject>
 
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeDisableInteractivePopGesture;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeStatusBarHidden;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeStatusBarStyle;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeNavigationBarHidden;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeNavigationBarTintColor;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeNavigationBarBarTintColor;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeNavigationBarTitleTextAttributes;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeNavigationBarBackImage;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeNavigationBarBackgroundImage;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeTabBarTintColor;
-FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeTabBarBarTintColor;
+@end
 
-@interface UIViewControllerMixExtentionAttributes : NSObject
+@interface UIViewControllerMixExtention : NSObject
 
 @property (nonatomic, assign) BOOL disableInteractivePopGesture;
 
@@ -35,6 +25,8 @@ FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeTabBarBarTi
 
 
 @property (nonatomic, assign) BOOL navigationBarHidden;
+
+@property (nonatomic, assign) BOOL navigationBarBottomLineHidden;
 
 @property (nonatomic, strong) NSDictionary *navigationBarTitleTextAttributes;
 
@@ -50,16 +42,6 @@ FOUNDATION_EXTERN MixExtViewControllerAttribute const MixExtAttributeTabBarBarTi
 @property (nonatomic, copy) UIColor *tabBarTintColor;
 
 @property (nonatomic, copy) UIColor *tabBarBarTintColor;
-
-@end
-
-@protocol UIViewControllerMixExtention <NSObject>
-
-@end
-
-@interface UIViewControllerMixExtention : NSObject
-
-@property (nonatomic, strong) UIViewControllerMixExtentionAttributes *attributes;
 
 @property (nonatomic, readonly) BOOL viewWillAppear;
 
