@@ -51,14 +51,9 @@
     return avc;
 }
 
-- (void)setViewWillAppear:(BOOL)viewWillAppear
+- (void)setViewState:(MixViewControllerState)viewState
 {
-    _viewWillAppear = viewWillAppear;
-}
-
-- (void)setViewDidAppear:(BOOL)viewDidAppear
-{
-    _viewDidAppear = viewDidAppear;
+    _viewState = viewState;
 }
 
 - (void)setDisableInteractivePopGesture:(BOOL)disableInteractivePopGesture
@@ -148,6 +143,11 @@
     [self tabBar].barTintColor = tabBarBarTintColor;
 }
 
+- (void)viewDidLoad
+{
+    self.viewState = MixViewControllerStateViewDidLoad;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     self.statusBarHidden = _statusBarHidden;
@@ -185,24 +185,24 @@
             }
         }
     } completion:nil];
-    self.viewWillAppear = YES;
+    self.viewState = MixViewControllerStateViewWillAppear;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     self.disableInteractivePopGesture = _disableInteractivePopGesture;
     self.navigationBarBottomLineHidden = _navigationBarBottomLineHidden;
-    self.viewDidAppear = YES;
+    self.viewState = MixViewControllerStateViewDidAppear;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    self.viewWillAppear = NO;
+    self.viewState = MixViewControllerStateViewWillDisappear;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    self.viewDidAppear = NO;
+    self.viewState = MixViewControllerStateViewDidDisappear;
 }
 
 - (UIView *)navigationBarBottomLineView
@@ -275,6 +275,7 @@
     [self _mix_extention_viewDidLoad];
     if (!self.mix_hasExtention) return;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    [self.mix_extention viewDidLoad];
 }
 
 - (UIStatusBarStyle)_mix_extention_preferredStatusBarStyle

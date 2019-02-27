@@ -18,13 +18,18 @@
 
 @implementation ViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        self.title = [NSString stringWithFormat:@"Test%d", rand() % 100];
+        [self.mix_extention addObserver:self forKeyPath:@"viewState" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = [NSString stringWithFormat:@"Test%d", rand() % 100];
-
-    [self.mix_extention addObserver:self forKeyPath:@"viewWillAppear" options:NSKeyValueObservingOptionNew context:nil];
-    [self.mix_extention addObserver:self forKeyPath:@"viewDidAppear" options:NSKeyValueObservingOptionNew context:nil];
 
     [self.mix_extention addObserver:self forKeyPath:@"disableInteractivePopGesture" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
     [self.mix_extention addObserver:self forKeyPath:@"navigationBarHidden" options:NSKeyValueObservingOptionNew context:nil];
@@ -122,11 +127,17 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
     if (object == self.mix_extention) {
-        if ([keyPath isEqualToString:@"viewWillAppear"]) {
-            NSLog(@"%@ Will %@", self.title, self.mix_extention.viewWillAppear ? @"Appear" : @"Disappear");
-        }
-        else if ([keyPath isEqualToString:@"viewDidAppear"]) {
-            NSLog(@"%@ Did %@", self.title, self.mix_extention.viewWillAppear ? @"Appear" : @"Disappear");
+        if ([keyPath isEqualToString:@"viewState"]) {
+            NSString *string = @"";
+            switch (self.mix_extention.viewState) {
+                case MixViewControllerStateViewDidLoad: string = @"view did load"; break;
+                case MixViewControllerStateViewWillAppear: string = @"view will appear"; break;
+                case MixViewControllerStateViewDidAppear: string = @"view did appear"; break;
+                case MixViewControllerStateViewWillDisappear: string = @"view will disappear"; break;
+                case MixViewControllerStateViewDidDisappear: string = @"view did disappear"; break;
+                default: break;
+            }
+            NSLog(@"%@ %@", self.title, string);
         }
     }
     else if (object == self.mix_extention) {
@@ -150,8 +161,7 @@
 
 - (void)dealloc
 {
-    [self.mix_extention removeObserver:self forKeyPath:@"viewWillAppear"];
-    [self.mix_extention removeObserver:self forKeyPath:@"viewDidAppear"];
+    [self.mix_extention removeObserver:self forKeyPath:@"viewState"];
     [self.mix_extention removeObserver:self forKeyPath:@"disableInteractivePopGesture"];
     [self.mix_extention removeObserver:self forKeyPath:@"navigationBarHidden"];
 }

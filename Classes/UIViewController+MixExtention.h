@@ -10,6 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, MixViewControllerState) {
+    MixViewControllerStateNone,
+    MixViewControllerStateViewDidLoad,
+    MixViewControllerStateViewWillAppear,
+    MixViewControllerStateViewDidAppear,
+    MixViewControllerStateViewWillDisappear,
+    MixViewControllerStateViewDidDisappear,
+};
+
 @protocol UIViewControllerMixExtention <NSObject>
 
 @end
@@ -43,9 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) UIColor *tabBarBarTintColor;
 
-@property (nonatomic, readonly) BOOL viewWillAppear;
-
-@property (nonatomic, readonly) BOOL viewDidAppear;
+@property (nonatomic, readonly) MixViewControllerState viewState;
 
 + (UIViewController *)topViewController;
 
