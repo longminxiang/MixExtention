@@ -22,7 +22,7 @@
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         self.title = [NSString stringWithFormat:@"Test%d", rand() % 100];
-        [self.mix_extention addObserver:self forKeyPath:@"viewState" options:NSKeyValueObservingOptionNew context:nil];
+        [self.mixE addObserver:self forKeyPath:@"viewState" options:NSKeyValueObservingOptionNew context:nil];
     }
     return self;
 }
@@ -31,82 +31,82 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self.mix_extention addObserver:self forKeyPath:@"disableInteractivePopGesture" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
-    [self.mix_extention addObserver:self forKeyPath:@"navigationBarHidden" options:NSKeyValueObservingOptionNew context:nil];
-    self.mix_extention.navigationBarTintColor = [self randColor];
-    self.mix_extention.navigationBarBackImage = [UIImage imageNamed:rand() % 2 ? @"icon_back" : @"nav_back"];
+    [self.mixE addObserver:self forKeyPath:@"disableInteractivePopGesture" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionInitial context:nil];
+    [self.mixE addObserver:self forKeyPath:@"navigationBarHidden" options:NSKeyValueObservingOptionNew context:nil];
+    self.mixE.navigationBarTintColor = [self randColor];
+    self.mixE.navigationBarBackImage = [UIImage imageNamed:rand() % 2 ? @"icon_back" : @"nav_back"];
 }
 
 - (IBAction)push
 {
-    [self.navigationController.mix_extention pushViewController:[ViewController new] animated:YES completion:^{
+    [self.navigationController.mixE pushViewController:[ViewController new] animated:YES completion:^{
         NSLog(@"push completed");
     }];
 }
 
 - (IBAction)pop
 {
-    [self.navigationController.mix_extention popViewControllerAnimated:YES completion:^{
+    [self.navigationController.mixE popViewControllerAnimated:YES completion:^{
         NSLog(@"pop completed");
     }];
 }
 
 - (IBAction)popToRoot
 {
-    [self.navigationController.mix_extention popToRootViewControllerAnimated:YES completion:^{
+    [self.navigationController.mixE popToRootViewControllerAnimated:YES completion:^{
         NSLog(@"pop to root completed");
     }];
 }
 
 - (IBAction)disableInteractivePopGesture
 {
-    self.mix_extention.disableInteractivePopGesture = !self.mix_extention.disableInteractivePopGesture;
+    self.mixE.disableInteractivePopGesture = !self.mixE.disableInteractivePopGesture;
 }
 
 - (IBAction)handleStatusBarHiddenButton
 {
-    self.mix_extention.statusBarHidden = !self.mix_extention.statusBarHidden;
+    self.mixE.statusBarHidden = !self.mixE.statusBarHidden;
 }
 
 - (IBAction)handleStatusBarStyleSegmentedControl:(UISegmentedControl *)sender
 {
-    self.mix_extention.statusBarStyle = sender.selectedSegmentIndex;
+    self.mixE.statusBarStyle = sender.selectedSegmentIndex;
 }
 
 - (IBAction)handleNavigationBarHidden
 {
-    self.mix_extention.navigationBarHidden = !self.mix_extention.navigationBarHidden;
+    self.mixE.navigationBarHidden = !self.mixE.navigationBarHidden;
 }
 
 - (IBAction)handleNavigationBarTintColor
 {
-    self.mix_extention.navigationBarTintColor = [self randColor];
+    self.mixE.navigationBarTintColor = [self randColor];
 }
 
 - (IBAction)handleNavigationBarBarTintColor
 {
-    self.mix_extention.navigationBarBarTintColor = [self randColor];
+    self.mixE.navigationBarBarTintColor = [self randColor];
 }
 
 - (IBAction)handleNavigationBarTitleColor
 {
     NSDictionary *atts = @{NSForegroundColorAttributeName: [self randColor]};
-    self.mix_extention.navigationBarTitleTextAttributes = atts;
+    self.mixE.navigationBarTitleTextAttributes = atts;
 }
 
 - (IBAction)handleNavigationBarBottomLineHidden
 {
-    self.mix_extention.navigationBarBottomLineHidden = !self.mix_extention.navigationBarBottomLineHidden;
+    self.mixE.navigationBarBottomLineHidden = !self.mixE.navigationBarBottomLineHidden;
 }
 
 - (IBAction)handleTabBarTintColor
 {
-    self.mix_extention.tabBarTintColor = [self randColor];
+    self.mixE.tabBarTintColor = [self randColor];
 }
 
 - (IBAction)handleTabBarBarTintColor
 {
-    self.mix_extention.tabBarBarTintColor = [self randColor];
+    self.mixE.tabBarBarTintColor = [self randColor];
 }
 
 - (IBAction)handleFindTopViewController
@@ -126,10 +126,10 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if (object == self.mix_extention) {
+    if (object == self.mixE) {
         if ([keyPath isEqualToString:@"viewState"]) {
             NSString *string = @"";
-            switch (self.mix_extention.viewState) {
+            switch (self.mixE.viewState) {
                 case MixViewControllerStateViewDidLoad: string = @"view did load"; break;
                 case MixViewControllerStateViewWillAppear: string = @"view will appear"; break;
                 case MixViewControllerStateViewDidAppear: string = @"view did appear"; break;
@@ -140,14 +140,14 @@
             NSLog(@"%@ %@", self.title, string);
         }
     }
-    else if (object == self.mix_extention) {
+    else if (object == self.mixE) {
         if ([keyPath isEqualToString:@"disableInteractivePopGesture"]) {
-            NSString *title = [NSString stringWithFormat:@"disableInteractivePopGesture: %@", self.mix_extention.disableInteractivePopGesture ? @"YES" : @"NO"];
+            NSString *title = [NSString stringWithFormat:@"disableInteractivePopGesture: %@", self.mixE.disableInteractivePopGesture ? @"YES" : @"NO"];
             self.disableInteractivePopGestureButton.titleLabel.text = title;
             [self.disableInteractivePopGestureButton setTitle:title forState:UIControlStateNormal];
         }
         else if ([keyPath isEqualToString:@"navigationBarHidden"]) {
-            NSString *title = [NSString stringWithFormat:@"statusBarHidden: %@", self.mix_extention.statusBarHidden ? @"YES" : @"NO"];
+            NSString *title = [NSString stringWithFormat:@"statusBarHidden: %@", self.mixE.statusBarHidden ? @"YES" : @"NO"];
             self.statusBarHiddenButton.titleLabel.text = title;
             [self.statusBarHiddenButton setTitle:title forState:UIControlStateNormal];
         }
@@ -161,9 +161,9 @@
 
 - (void)dealloc
 {
-    [self.mix_extention removeObserver:self forKeyPath:@"viewState"];
-    [self.mix_extention removeObserver:self forKeyPath:@"disableInteractivePopGesture"];
-    [self.mix_extention removeObserver:self forKeyPath:@"navigationBarHidden"];
+    [self.mixE removeObserver:self forKeyPath:@"viewState"];
+    [self.mixE removeObserver:self forKeyPath:@"disableInteractivePopGesture"];
+    [self.mixE removeObserver:self forKeyPath:@"navigationBarHidden"];
 }
 
 @end

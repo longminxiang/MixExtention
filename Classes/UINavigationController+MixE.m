@@ -1,14 +1,14 @@
 //
-//  UINavigationController+MixExtention.m
+//  UINavigationController+MixE.m
 //  MixExtention
 //
 //  Created by Eric Lung on 2019/2/14.
 //  Copyright © 2019 Mix. All rights reserved.
 //
 
-#import "UINavigationController+MixExtention.h"
+#import "UINavigationController+MixE.h"
 #import <objc/runtime.h>
-#import "MixExtentionHooker.h"
+#import "MixEHooker.h"
 
 @interface UINavigationControllerMixExtention ()
 
@@ -76,11 +76,11 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(childViewControllerForStatusBarStyle), @selector(_mix_extention_childViewControllerForStatusBarStyle));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(childViewControllerForStatusBarStyle), @selector(_mix_extention_childViewControllerForStatusBarStyle));
     });
 }
 
-- (UINavigationControllerMixExtention *)mix_extention
+- (UINavigationControllerMixExtention *)mixE
 {
     id obj = objc_getAssociatedObject(self, _cmd);
     if (!obj) {

@@ -1,5 +1,5 @@
 //
-//  UINavigationController+MixExtention.h
+//  UINavigationController+MixE.h
 //  MixExtention
 //
 //  Created by Eric Lung on 2019/2/14.
@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UINavigationController (MixExtention)
 
-@property (nonatomic, readonly) UINavigationControllerMixExtention *mix_extention;
+@property (nonatomic, readonly) UINavigationControllerMixExtention *mixE;
 
 @end
 

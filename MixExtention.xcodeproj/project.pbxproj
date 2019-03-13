@@ -12,9 +12,9 @@
 		070E64DA2215559800C3C122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070E64D92215559800C3C122 /* Assets.xcassets */; };
 		070E64DD2215559800C3C122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070E64DB2215559800C3C122 /* LaunchScreen.storyboard */; };
 		070E64E02215559800C3C122 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64DF2215559800C3C122 /* main.m */; };
-		070E64EA2215566400C3C122 /* UINavigationController+MixExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64E92215566400C3C122 /* UINavigationController+MixExtention.m */; };
+		070E64EA2215566400C3C122 /* UINavigationController+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64E92215566400C3C122 /* UINavigationController+MixE.m */; };
 		070E64EC2215579600C3C122 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E64EB2215579600C3C122 /* ViewController.xib */; };
-		070E64F3221569C800C3C122 /* UIViewController+MixExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64F2221569C800C3C122 /* UIViewController+MixExtention.m */; };
+		070E64F3221569C800C3C122 /* UIViewController+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64F2221569C800C3C122 /* UIViewController+MixE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +28,13 @@
 		070E64DE2215559800C3C122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		070E64DF2215559800C3C122 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		070E64E7221555E300C3C122 /* MixExtention.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MixExtention.podspec; sourceTree = "<group>"; };
-		070E64E82215566400C3C122 /* UINavigationController+MixExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MixExtention.h"; sourceTree = "<group>"; };
-		070E64E92215566400C3C122 /* UINavigationController+MixExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MixExtention.m"; sourceTree = "<group>"; };
+		070E64E82215566400C3C122 /* UINavigationController+MixE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+MixE.h"; sourceTree = "<group>"; };
+		070E64E92215566400C3C122 /* UINavigationController+MixE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+MixE.m"; sourceTree = "<group>"; };
 		070E64EB2215579600C3C122 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		070E64ED22155A8500C3C122 /* MixExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixExtention.h; sourceTree = "<group>"; };
-		070E64F1221569C800C3C122 /* UIViewController+MixExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MixExtention.h"; sourceTree = "<group>"; };
-		070E64F2221569C800C3C122 /* UIViewController+MixExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MixExtention.m"; sourceTree = "<group>"; };
-		07FEC8C022165C7600E97D62 /* MixExtentionHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixExtentionHooker.h; sourceTree = "<group>"; };
+		070E64F1221569C800C3C122 /* UIViewController+MixE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MixE.h"; sourceTree = "<group>"; };
+		070E64F2221569C800C3C122 /* UIViewController+MixE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MixE.m"; sourceTree = "<group>"; };
+		07FEC8C022165C7600E97D62 /* MixEHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixEHooker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				070E64ED22155A8500C3C122 /* MixExtention.h */,
-				07FEC8C022165C7600E97D62 /* MixExtentionHooker.h */,
-				070E64F1221569C800C3C122 /* UIViewController+MixExtention.h */,
-				070E64F2221569C800C3C122 /* UIViewController+MixExtention.m */,
-				070E64E82215566400C3C122 /* UINavigationController+MixExtention.h */,
-				070E64E92215566400C3C122 /* UINavigationController+MixExtention.m */,
+				07FEC8C022165C7600E97D62 /* MixEHooker.h */,
+				070E64F1221569C800C3C122 /* UIViewController+MixE.h */,
+				070E64F2221569C800C3C122 /* UIViewController+MixE.m */,
+				070E64E82215566400C3C122 /* UINavigationController+MixE.h */,
+				070E64E92215566400C3C122 /* UINavigationController+MixE.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -166,8 +166,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				070E64D52215559600C3C122 /* ViewController.m in Sources */,
-				070E64EA2215566400C3C122 /* UINavigationController+MixExtention.m in Sources */,
-				070E64F3221569C800C3C122 /* UIViewController+MixExtention.m in Sources */,
+				070E64EA2215566400C3C122 /* UINavigationController+MixE.m in Sources */,
+				070E64F3221569C800C3C122 /* UIViewController+MixE.m in Sources */,
 				070E64E02215559800C3C122 /* main.m in Sources */,
 				070E64D22215559600C3C122 /* AppDelegate.m in Sources */,
 			);

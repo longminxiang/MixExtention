@@ -1,13 +1,13 @@
 //
-//  UIViewController+MixExtention.m
+//  UIViewController+MixE.m
 //  MixExtention
 //
 //  Created by Eric Lung on 2019/2/14.
 //  Copyright © 2019 Mix. All rights reserved.
 //
 
-#import "UIViewController+MixExtention.h"
-#import "MixExtentionHooker.h"
+#import "UIViewController+MixE.h"
+#import "MixEHooker.h"
 
 @interface UIViewControllerMixExtention ()
 
@@ -245,12 +245,12 @@
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(viewDidLoad), @selector(_mix_extention_viewDidLoad));
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(viewWillAppear:), @selector(_mix_extention_viewWillAppear:));
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(viewWillDisappear:), @selector(_mix_extention_viewWillDisappear:));
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(viewDidAppear:), @selector(_mix_extention_viewDidAppear:));
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(viewDidDisappear:), @selector(_mix_extention_viewDidDisappear:));
-        mix_extention_hook_class_swizzleMethodAndStore(self, @selector(preferredStatusBarStyle), @selector(_mix_extention_preferredStatusBarStyle));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(viewDidLoad), @selector(_mix_extention_viewDidLoad));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(viewWillAppear:), @selector(_mix_extention_viewWillAppear:));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(viewWillDisappear:), @selector(_mix_extention_viewWillDisappear:));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(viewDidAppear:), @selector(_mix_extention_viewDidAppear:));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(viewDidDisappear:), @selector(_mix_extention_viewDidDisappear:));
+        mixE_hook_class_swizzleMethodAndStore(self, @selector(preferredStatusBarStyle), @selector(_mix_extention_preferredStatusBarStyle));
     });
 }
 
@@ -259,7 +259,7 @@
     return [self conformsToProtocol:@protocol(UIViewControllerMixExtention)];
 }
 
-- (UIViewControllerMixExtention *)mix_extention
+- (UIViewControllerMixExtention *)mixE
 {
     if (!self.mix_hasExtention) return nil;
     id obj = objc_getAssociatedObject(self, _cmd);
@@ -275,36 +275,36 @@
     [self _mix_extention_viewDidLoad];
     if (!self.mix_hasExtention) return;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    [self.mix_extention viewDidLoad];
+    [self.mixE viewDidLoad];
 }
 
 - (UIStatusBarStyle)_mix_extention_preferredStatusBarStyle
 {
-    return self.mix_hasExtention ? self.mix_extention.statusBarStyle : [self _mix_extention_preferredStatusBarStyle];
+    return self.mix_hasExtention ? self.mixE.statusBarStyle : [self _mix_extention_preferredStatusBarStyle];
 }
 
 - (void)_mix_extention_viewWillAppear:(BOOL)animated
 {
     [self _mix_extention_viewWillAppear:animated];
-    if (self.mix_hasExtention) [self.mix_extention viewWillAppear:animated];
+    if (self.mix_hasExtention) [self.mixE viewWillAppear:animated];
 }
 
 - (void)_mix_extention_viewWillDisappear:(BOOL)animated
 {
     [self _mix_extention_viewWillDisappear:animated];
-    if (self.mix_hasExtention) [self.mix_extention viewWillDisappear:animated];
+    if (self.mix_hasExtention) [self.mixE viewWillDisappear:animated];
 }
 
 - (void)_mix_extention_viewDidAppear:(BOOL)animated
 {
     [self _mix_extention_viewDidAppear:animated];
-    if (self.mix_hasExtention) [self.mix_extention viewDidAppear:animated];
+    if (self.mix_hasExtention) [self.mixE viewDidAppear:animated];
 }
 
 - (void)_mix_extention_viewDidDisappear:(BOOL)animated
 {
     [self _mix_extention_viewDidDisappear:animated];
-    if (self.mix_hasExtention) [self.mix_extention viewDidDisappear:animated];
+    if (self.mix_hasExtention) [self.mixE viewDidDisappear:animated];
 }
 
 @end

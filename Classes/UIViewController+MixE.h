@@ -1,5 +1,5 @@
 //
-//  UIViewController+MixExtention.h
+//  UIViewController+MixE.h
 //  MixExtention
 //
 //  Created by Eric Lung on 2019/2/14.
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSUInteger, MixViewControllerState) {
 
 @interface UIViewController (MixExtention)
 
-@property (nonatomic, readonly) UIViewControllerMixExtention *mix_extention;
+@property (nonatomic, readonly) UIViewControllerMixExtention *mixE;
 
 @end
 
