@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 typedef NS_ENUM(NSUInteger, MixViewControllerState) {
     MixViewControllerStateNone,
     MixViewControllerStateViewDidLoad,
@@ -23,15 +21,13 @@ typedef NS_ENUM(NSUInteger, MixViewControllerState) {
 
 @end
 
-@interface UIViewControllerMixExtention : NSObject
+@interface MixViewControllerItem : NSObject
 
 @property (nonatomic, assign) BOOL disableInteractivePopGesture;
-
 
 @property (nonatomic, assign) BOOL statusBarHidden;
 
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
-
 
 @property (nonatomic, assign) BOOL navigationBarHidden;
 
@@ -47,12 +43,21 @@ typedef NS_ENUM(NSUInteger, MixViewControllerState) {
 
 @property (nonatomic, strong) UIImage *navigationBarBackImage;
 
-
 @property (nonatomic, copy) UIColor *tabBarTintColor;
 
 @property (nonatomic, copy) UIColor *tabBarBarTintColor;
 
+@end
+
+@interface UIViewControllerMixExtention : NSObject
+
+@property (nonatomic, strong) MixViewControllerItem *item;
+
 @property (nonatomic, readonly) MixViewControllerState viewState;
+
+@end
+
+@interface UIViewControllerMixExtention (TopViewController)
 
 + (UIViewController *)topViewController;
 
@@ -63,5 +68,3 @@ typedef NS_ENUM(NSUInteger, MixViewControllerState) {
 @property (nonatomic, readonly) UIViewControllerMixExtention *mixE;
 
 @end
-
-NS_ASSUME_NONNULL_END
