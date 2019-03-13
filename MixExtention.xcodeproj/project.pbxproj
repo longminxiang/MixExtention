@@ -15,6 +15,7 @@
 		070E64EA2215566400C3C122 /* UINavigationController+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64E92215566400C3C122 /* UINavigationController+MixE.m */; };
 		070E64EC2215579600C3C122 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E64EB2215579600C3C122 /* ViewController.xib */; };
 		070E64F3221569C800C3C122 /* UIViewController+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64F2221569C800C3C122 /* UIViewController+MixE.m */; };
+		071AD3BB2238F2B300736EDE /* UITabBar+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AD3B92238F2B300736EDE /* UITabBar+MixE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		070E64ED22155A8500C3C122 /* MixExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixExtention.h; sourceTree = "<group>"; };
 		070E64F1221569C800C3C122 /* UIViewController+MixE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MixE.h"; sourceTree = "<group>"; };
 		070E64F2221569C800C3C122 /* UIViewController+MixE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MixE.m"; sourceTree = "<group>"; };
+		071AD3B92238F2B300736EDE /* UITabBar+MixE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+MixE.m"; sourceTree = "<group>"; };
+		071AD3BA2238F2B300736EDE /* UITabBar+MixE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+MixE.h"; sourceTree = "<group>"; };
 		07FEC8C022165C7600E97D62 /* MixEHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixEHooker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +94,8 @@
 				070E64F2221569C800C3C122 /* UIViewController+MixE.m */,
 				070E64E82215566400C3C122 /* UINavigationController+MixE.h */,
 				070E64E92215566400C3C122 /* UINavigationController+MixE.m */,
+				071AD3BA2238F2B300736EDE /* UITabBar+MixE.h */,
+				071AD3B92238F2B300736EDE /* UITabBar+MixE.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			files = (
 				070E64D52215559600C3C122 /* ViewController.m in Sources */,
 				070E64EA2215566400C3C122 /* UINavigationController+MixE.m in Sources */,
+				071AD3BB2238F2B300736EDE /* UITabBar+MixE.m in Sources */,
 				070E64F3221569C800C3C122 /* UIViewController+MixE.m in Sources */,
 				070E64E02215559800C3C122 /* main.m in Sources */,
 				070E64D22215559600C3C122 /* AppDelegate.m in Sources */,
