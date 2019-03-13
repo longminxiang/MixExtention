@@ -17,6 +17,8 @@
 		070E64F3221569C800C3C122 /* UIViewController+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E64F2221569C800C3C122 /* UIViewController+MixE.m */; };
 		071AD3BB2238F2B300736EDE /* UITabBar+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AD3B92238F2B300736EDE /* UITabBar+MixE.m */; };
 		071AD3BE2238FFE700736EDE /* UINavigationBar+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AD3BD2238FFE700736EDE /* UINavigationBar+MixE.m */; };
+		071AD3C12239038700736EDE /* MixExtentionHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AD3C02239038700736EDE /* MixExtentionHooker.m */; };
+		071AD3C42239048300736EDE /* NSTimer+MixE.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AD3C32239048300736EDE /* NSTimer+MixE.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,10 @@
 		071AD3BA2238F2B300736EDE /* UITabBar+MixE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+MixE.h"; sourceTree = "<group>"; };
 		071AD3BC2238FFE700736EDE /* UINavigationBar+MixE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+MixE.h"; sourceTree = "<group>"; };
 		071AD3BD2238FFE700736EDE /* UINavigationBar+MixE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+MixE.m"; sourceTree = "<group>"; };
-		07FEC8C022165C7600E97D62 /* MixEHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixEHooker.h; sourceTree = "<group>"; };
+		071AD3BF2239038700736EDE /* MixExtentionHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MixExtentionHooker.h; sourceTree = "<group>"; };
+		071AD3C02239038700736EDE /* MixExtentionHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MixExtentionHooker.m; sourceTree = "<group>"; };
+		071AD3C22239048300736EDE /* NSTimer+MixE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+MixE.h"; sourceTree = "<group>"; };
+		071AD3C32239048300736EDE /* NSTimer+MixE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+MixE.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,13 +97,16 @@
 			isa = PBXGroup;
 			children = (
 				070E64ED22155A8500C3C122 /* MixExtention.h */,
-				07FEC8C022165C7600E97D62 /* MixEHooker.h */,
+				071AD3BF2239038700736EDE /* MixExtentionHooker.h */,
+				071AD3C02239038700736EDE /* MixExtentionHooker.m */,
 				070E64F1221569C800C3C122 /* UIViewController+MixE.h */,
 				070E64F2221569C800C3C122 /* UIViewController+MixE.m */,
 				070E64E82215566400C3C122 /* UINavigationController+MixE.h */,
 				070E64E92215566400C3C122 /* UINavigationController+MixE.m */,
 				071AD3BC2238FFE700736EDE /* UINavigationBar+MixE.h */,
 				071AD3BD2238FFE700736EDE /* UINavigationBar+MixE.m */,
+				071AD3C22239048300736EDE /* NSTimer+MixE.h */,
+				071AD3C32239048300736EDE /* NSTimer+MixE.m */,
 				071AD3BA2238F2B300736EDE /* UITabBar+MixE.h */,
 				071AD3B92238F2B300736EDE /* UITabBar+MixE.m */,
 			);
@@ -178,9 +186,11 @@
 				071AD3BE2238FFE700736EDE /* UINavigationBar+MixE.m in Sources */,
 				070E64D52215559600C3C122 /* ViewController.m in Sources */,
 				070E64EA2215566400C3C122 /* UINavigationController+MixE.m in Sources */,
+				071AD3C12239038700736EDE /* MixExtentionHooker.m in Sources */,
 				071AD3BB2238F2B300736EDE /* UITabBar+MixE.m in Sources */,
 				070E64F3221569C800C3C122 /* UIViewController+MixE.m in Sources */,
 				070E64E02215559800C3C122 /* main.m in Sources */,
+				071AD3C42239048300736EDE /* NSTimer+MixE.m in Sources */,
 				070E64D22215559600C3C122 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

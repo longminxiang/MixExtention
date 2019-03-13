@@ -7,7 +7,8 @@
 //
 
 #import "UIViewController+MixE.h"
-#import "MixEHooker.h"
+#import <objc/runtime.h>
+#import "MixExtentionHooker.h"
 #import "UINavigationBar+MixE.h"
 
 @implementation MixViewControllerItem

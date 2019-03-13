@@ -1,14 +1,15 @@
 //
+//  MixExtentionHooker.m
 //  MixExtention
 //
-//  Created by Eric Lung on 2019/2/15.
+//  Created by Eric Lung on 2019/3/13.
 //  Copyright © 2019 Mix. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "MixExtentionHooker.h"
 #import <objc/runtime.h>
 
-FOUNDATION_STATIC_INLINE void mixE_hook_class_swizzleMethodAndStore(Class class, SEL originalSelector, SEL swizzledSelector)
+void mixE_hook_class_swizzleMethodAndStore(Class class, SEL originalSelector, SEL swizzledSelector)
 {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
