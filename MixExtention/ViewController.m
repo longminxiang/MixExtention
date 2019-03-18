@@ -58,6 +58,20 @@
     }];
 }
 
+- (IBAction)present
+{
+    [self presentViewController:[ViewController new] animated:YES completion:^{
+        NSLog(@"present completed");
+    }];
+}
+
+- (IBAction)dismiss
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"dismiss completed");
+    }];
+}
+
 - (IBAction)disableInteractivePopGesture
 {
     self.mixE.item.disableInteractivePopGesture = !self.mixE.item.disableInteractivePopGesture;

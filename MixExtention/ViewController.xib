@@ -51,7 +51,7 @@
                     <rect key="frame" x="16" y="109" width="35" height="30"/>
                     <state key="normal" title="Push"/>
                     <connections>
-                        <action selector="push" destination="-1" eventType="touchUpInside" id="TRn-ci-oop"/>
+                        <action selector="push" destination="-1" eventType="touchUpInside" id="OrC-ci-zGw"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPi-yC-n8v">
@@ -140,6 +140,20 @@
                         <action selector="handleNavigationBarBottomLineHidden" destination="-1" eventType="touchUpInside" id="qKr-AH-wtC"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTa-7A-HEo">
+                    <rect key="frame" x="224" y="109" width="53" height="30"/>
+                    <state key="normal" title="Present"/>
+                    <connections>
+                        <action selector="present" destination="-1" eventType="touchUpInside" id="zrV-Uz-FUu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1n-dx-beO">
+                    <rect key="frame" x="297" y="109" width="54" height="30"/>
+                    <state key="normal" title="Dismiss"/>
+                    <connections>
+                        <action selector="dismiss" destination="-1" eventType="touchUpInside" id="6yY-ht-d22"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -155,10 +169,13 @@
                 <constraint firstItem="9r8-HS-fbD" firstAttribute="leading" secondItem="BCh-WT-pz2" secondAttribute="trailing" constant="20" id="GfW-oJ-NoV"/>
                 <constraint firstItem="g88-60-ENO" firstAttribute="top" secondItem="CGr-5f-VPG" secondAttribute="bottom" constant="8" id="GpO-Qj-pVr"/>
                 <constraint firstItem="uky-Dw-jWe" firstAttribute="top" secondItem="g88-60-ENO" secondAttribute="bottom" constant="8" id="IdS-sr-Vbm"/>
+                <constraint firstItem="lTa-7A-HEo" firstAttribute="leading" secondItem="9r8-HS-fbD" secondAttribute="trailing" constant="20" id="MBd-6H-2tA"/>
                 <constraint firstItem="k1o-iD-1ah" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="MoA-2j-1V7"/>
                 <constraint firstItem="bPi-yC-n8v" firstAttribute="top" secondItem="XiZ-VD-862" secondAttribute="bottom" constant="8" id="NV6-ol-R9v"/>
                 <constraint firstItem="c4D-tb-klK" firstAttribute="top" secondItem="H2y-wy-3Nn" secondAttribute="bottom" constant="8" id="OBg-an-Aov"/>
                 <constraint firstItem="BCh-WT-pz2" firstAttribute="centerY" secondItem="cgf-36-zw1" secondAttribute="centerY" id="OGy-sL-Tp0"/>
+                <constraint firstItem="lTa-7A-HEo" firstAttribute="centerY" secondItem="9r8-HS-fbD" secondAttribute="centerY" id="P6s-KZ-jLS"/>
+                <constraint firstItem="Z1n-dx-beO" firstAttribute="leading" secondItem="lTa-7A-HEo" secondAttribute="trailing" constant="20" id="SWZ-h2-cwX"/>
                 <constraint firstItem="g88-60-ENO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="T5n-TV-0RP"/>
                 <constraint firstItem="wXq-NI-yz4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="T6j-A9-94v"/>
                 <constraint firstItem="LCQ-z0-eBT" firstAttribute="top" secondItem="XwJ-ou-ccA" secondAttribute="bottom" constant="8" id="Unh-mZ-CR1"/>
@@ -172,6 +189,7 @@
                 <constraint firstItem="cgf-36-zw1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="pf6-a5-JHA"/>
                 <constraint firstItem="H2y-wy-3Nn" firstAttribute="top" secondItem="LCQ-z0-eBT" secondAttribute="bottom" constant="8" id="rW9-Gp-Bs9"/>
                 <constraint firstItem="cgf-36-zw1" firstAttribute="top" secondItem="k1o-iD-1ah" secondAttribute="bottom" constant="8" id="uG3-Fv-DFe"/>
+                <constraint firstItem="Z1n-dx-beO" firstAttribute="centerY" secondItem="lTa-7A-HEo" secondAttribute="centerY" id="umP-jg-ENy"/>
                 <constraint firstItem="H2y-wy-3Nn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="vFy-Gd-HU3"/>
                 <constraint firstItem="9r8-HS-fbD" firstAttribute="centerY" secondItem="BCh-WT-pz2" secondAttribute="centerY" id="wIJ-X2-ipa"/>
                 <constraint firstItem="XwJ-ou-ccA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="xgx-VH-I61"/>

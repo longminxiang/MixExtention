@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'MixExtention'
-    s.version = '1.0.8'
+    s.version = '1.0.9'
     s.summary = 'Mix Extention'
     s.authors = { 'Eric Long' => 'longminxiang@163.com' }
     s.license = 'MIT'

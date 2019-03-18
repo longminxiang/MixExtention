@@ -110,7 +110,7 @@
                         if (![sview isKindOfClass:[UIVisualEffectView class]]) continue;
                         for (UIView *ssview in [sview subviews]) {
                             if (ssview.alpha < 0.86 && !self.item.navigationBarHidden) {
-                                ssview.backgroundColor = self.item.navigationBarTintColor;
+                                ssview.backgroundColor = self.item.navigationBarBarTintColor;
                                 break;
                             }
                         }
